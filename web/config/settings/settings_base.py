@@ -87,6 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
+        #'PASSWORD': 'h2odbaccess',
         'HOST': 'db',
         'PORT': 5432,
     }
@@ -151,9 +152,16 @@ ACCESSIBILITY_POLICY_URL = 'https://accessibility.huit.harvard.edu/digital-acces
 CAPAPI_CASE_URL_FSTRING = 'https://api.case.law/v1/cases/{}/'
 CAPAPI_COURT_URL_FSTRING = 'https://api.case.law/v1/courts/?id={}'
 
-CONTACT_EMAIL = 'info@opencasebook.org'
-DEFAULT_FROM_EMAIL = 'info@opencasebook.org'
-PROFESSOR_VERIFIER_EMAILS = ['info@opencasebook.org']
+CONTACT_EMAIL = 'ktfhale@gmail.com'
+DEFAULT_FROM_EMAIL = 'h2o.annotator@gmail.com'
+PROFESSOR_VERIFIER_EMAILS = ['h2o.annotator@gmail.com']
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'h2o.annotator@gmail.com'
+EMAIL_HOST_PASSWORD = '***REMOVED***'
+EMAIL_USE_TLS = True
 
 # Make these settings available for use in Django's templates.
 # e.g. <a href="mailto:{{ CONTACT_EMAIL }}">Contact Us</a>

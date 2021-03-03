@@ -9,13 +9,20 @@ ENV LANG=C.UTF-8 \
 RUN apt-get update && apt-get install -y nano postgresql-client
 
 # pin node version -- see https://github.com/nodesource/distributions/issues/33
-RUN curl -o nodejs.deb https://deb.nodesource.com/node_12.x/pool/main/n/nodejs/nodejs_12.13.1-1nodesource1_amd64.deb \
+# Modified to use arm64 instead of amd64
+RUN curl -o nodejs.deb https://deb.nodesource.com/node_12.x/pool/main/n/nodejs/nodejs_12.13.1-1nodesource1_arm64.deb \
     && dpkg -i ./nodejs.deb \
     && rm nodejs.deb
 
 # Install Pandoc, for export
-RUN wget https://github.com/jgm/pandoc/releases/download/2.8.1/pandoc-2.8.1-1-amd64.deb \
-    && dpkg -i pandoc-2.8.1-1-amd64.deb
+RUN apt-get install -y pandoc
+
+#My attempts below (creates version conflicts)
+#RUN wget http://ftp.br.debian.org/debian/pool/main/p/pandoc/pandoc_2.9.2.1-1+b1_arm64.deb \
+#    && dpkg -i pandoc_2.9.2.1-1+b1_arm64.deb 
+
+#RUN wget https://github.com/jgm/pandoc/releases/download/2.8.1/pandoc-2.8.1-1-amd64.deb \
+#    && dpkg -i pandoc-2.8.1-1-amd64.deb
 
 RUN mkdir -p /app/web
 WORKDIR /app/web

@@ -1,7 +1,7 @@
 <nav>
   <div class="content">
     <div class="brand">
-      <a class="wrapper logo" href="{% url 'index' %}">H2O</a>
+      <a class="wrapper logo" href="{% url 'index' %}">H2O Annotator</a>
     </div>
     <div class="links">
       {% if request.user.is_authenticated %}
@@ -35,7 +35,7 @@
           </div>
         </div>
       {% else %}
-        <a class="sign-up" href="{% url "sign_up" %}">Sign up for free</a>
+        <a class="sign-up" href="{% url "sign_up" %}">Sign up</a>
         <a class="sign-in" href="{% url "login" %}">Sign In</a>
       {% endif %}
     </div>

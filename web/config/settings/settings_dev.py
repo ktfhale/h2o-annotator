@@ -1,6 +1,6 @@
 from .settings_base import *  # noqa
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.local', 'backend', 'django']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.local', 'backend', 'django', '255e41bccdfc.ngrok.io']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '***REMOVED***'
@@ -33,7 +33,8 @@ if 'pytest' not in sys.modules:  # don't run this from tests
         pass
 
 # Print sent emails to the console, for debugging
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Disabling to test email sending in development
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # For testing error reporting
 ADMINS = [('John', 'john@example.com'), ('Mary', 'mary@example.com')]
