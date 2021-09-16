@@ -11,7 +11,7 @@
   {% endif %}
   {% if can_create_draft %}
     <form class="button_to" method="post" action="{% if casebook %}{% url 'create_draft' casebook %}{% else %}{% url 'create_draft' section.casebook %}{% endif %}">
-      <input class="action edit one-line create-draft" data-disable-with="Revise" type="submit" value="Revise">
+      <input class="action edit one-line create-draft" data-disable-with="Revise" type="submit" value="Revise & Annotate">
       {% csrf_token %}
     </form>
     {# TODO: see if disable functionality works #}

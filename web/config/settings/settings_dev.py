@@ -1,6 +1,11 @@
 from .settings_base import *  # noqa
+  #flask:
+  #  proto: http
+  #  addr: 5000
+  #  host_header: 5000
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.local', 'backend', 'django', '255e41bccdfc.ngrok.io']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.local', 'backend', 'django', 
+                '***REMOVED***']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '***REMOVED***'

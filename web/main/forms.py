@@ -227,8 +227,9 @@ class SignupForm(ModelForm):
         email = self.cleaned_data['email_address']
         if email:
             #if email.endswith(".edu") or email.endswith(".gov") or email.endswith(".ac.uk"):
-            if email.endswith(".edu"):
-                return email
+            #if email.endswith(".edu"):
+                #return email
+            return email
             domain = email.split("@")[-1]
             valid_domains = set([e.email_domain for e in EmailWhitelist.objects.all()])
             if domain not in valid_domains:

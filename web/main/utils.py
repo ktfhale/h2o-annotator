@@ -369,13 +369,7 @@ def send_invitation_email(request, receiving_user, casebook):
 
 You can set up your account by choosing a password at {}.
 
-Access this casebook directly at {} or visit your dashboard at {} to see all of your casebooks.
-
-To learn more, please visit our help guide at https://about.opencasebook.org/. If you have questions, you can reach us at info@opencasebook.org.
-
-
-The H2O open casebook team
-Harvard Law School Library""".format(inviting_user.email_address, casebook.title, verify_link, request.build_absolute_uri(casebook.get_absolute_url()), request.build_absolute_uri("/"))
+Access this casebook directly at {} or visit your dashboard at {} to see all of your casebooks.""".format(inviting_user.email_address, casebook.title, verify_link, request.build_absolute_uri(casebook.get_absolute_url()), request.build_absolute_uri("/"))
     send_mail(
         "{} has invited you to collaborate on a casebook".format(inviting_user.attribution),
         message,
@@ -390,11 +384,7 @@ def send_collaboration_email(request, receiving_user, casebook):
     message = """You have been invited by {} to collaborate on a casebook titled {}.
 
 Access this casebook directly at {} or visit your dashboard at {} to see all of your casebooks.
-
-To learn more, please visit our help guide at https://about.opencasebook.org/. If you have questions, you can reach us at info@opencasebook.org.
-
-The H2O open casebook team
-Harvard Law School Library""".format(inviting_user.email_address, casebook.title, request.build_absolute_uri(casebook.get_absolute_url()), request.build_absolute_uri("/"))
+""".format(inviting_user.email_address, casebook.title, request.build_absolute_uri(casebook.get_absolute_url()), request.build_absolute_uri("/"))
     send_mail(
         "{} has invited you to collaborate on a casebook.".format(inviting_user.attribution),
         message,
